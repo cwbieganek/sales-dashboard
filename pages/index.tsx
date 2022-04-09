@@ -11,7 +11,7 @@ import {
 import { SearchIcon } from '@heroicons/react/solid'
 
 // Custom components
-import StatSimple from '../components/StatSimple';
+import StatsSimple from '../components/StatsSimple'
 
 // Custom modules
 import { classNames } from '../modules/Utils';
@@ -243,16 +243,7 @@ export default function Example() {
                 <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
               </div>
               <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-                {/* Stats component */}
-                <div>
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">Last 30 days</h3>
-                  <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
-                    {stats.map((stat) => (
-                      <StatSimple statistic={stat}/>
-                    ))}
-                  </dl>
-                </div>
-                {/* end Stats component */}
+                <StatsSimple statistics={stats} />
               </div>
             </div>
           </main>

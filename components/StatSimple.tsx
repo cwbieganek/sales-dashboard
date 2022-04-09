@@ -12,7 +12,11 @@ interface IStatSimpleProps {
   statistic: Statistic;
 }
 
-function getStatisticColor(impact: Impact) : string {
+function getStatisticColor(impact?: Impact) : string {
+  if (!impact) {
+    return "text-gray-900";
+  }
+
   switch (impact) {
     case "GOOD":
       return "text-green-600";
@@ -27,7 +31,7 @@ function getStatisticColor(impact: Impact) : string {
 
 function renderArrowAndPercentageChange(statistic: Statistic) {
   if (!statistic.percentageChange) {
-    console.log(`No arrow needed becase percentage change = ${statistic.percentageChange}`);
+    console.log(`No arrow needed because percentage change = ${statistic.percentageChange}`);
     return null;
   }
 

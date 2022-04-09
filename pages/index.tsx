@@ -13,6 +13,9 @@ import { SearchIcon } from '@heroicons/react/solid'
 // Custom types
 import type { Impact, Statistic } from '../modules/Stats';
 
+// Fake data
+import { stats } from '../modules/Fake';
+
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
   { name: 'Products', href: '#', icon: CollectionIcon, current: false },
@@ -22,14 +25,6 @@ const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
   { name: 'Sign out', href: '#' },
-]
-
-const stats: Statistic[] = [
-  { name: 'Total Sales', stat: '10,142', impact: "GOOD"},
-  { name: 'Gross Revenue', stat: '$202,840', impact: "GOOD" },
-  { name: 'Net Profit', stat: '$50,710', impact: "GOOD" },
-  { name: 'Reviews', stat: '127', impact: "NEUTRAL" },
-  { name: 'Returns', stat: '13', impact: "BAD" },
 ]
 
 function classNames(...classes: string[]) {

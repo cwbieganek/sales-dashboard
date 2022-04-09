@@ -1,4 +1,4 @@
-import type { Impact, Statistic } from './Stats';
+import type { Statistic } from './Stats';
 
 export const stats: Statistic[] = [
   { name: 'Total Sales', stat: '10,142', percentageImpact: "GOOD"},

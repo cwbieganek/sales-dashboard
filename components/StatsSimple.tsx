@@ -6,9 +6,6 @@ import StatSimple from "./StatSimple";
 // Custom types
 import type { Statistic } from "../modules/Stats";
 
-// Custom modules
-import { classNames } from "../modules/Utils";
-
 interface IStatsSimpleProps {
   statistics: Statistic[];
 }

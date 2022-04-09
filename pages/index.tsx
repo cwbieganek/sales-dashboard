@@ -10,6 +10,12 @@ import {
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
 
+interface Statistic {
+  name: string;
+  stat: string | number;
+  percentageChange?: number;
+}
+
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
   { name: 'Products', href: '#', icon: CollectionIcon, current: false },
@@ -21,8 +27,10 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
-const stats = [
+const stats: Statistic[] = [
   { name: 'Total Sales', stat: '10,142' },
+  { name: 'Gross Revenue', stat: '$202,840' },
+  { name: 'Net Profit', stat: '$50,710' },
   { name: 'Reviews', stat: '127' },
   { name: 'Returns', stat: '13' },
 ]

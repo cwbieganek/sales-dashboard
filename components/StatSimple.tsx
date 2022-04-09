@@ -1,5 +1,7 @@
 import React from "react";
 
+import { ArrowSmUpIcon, ArrowSmDownIcon } from "@heroicons/react/outline";
+
 // Custom types
 import type { Impact, Statistic } from "../modules/Stats";
 
@@ -23,14 +25,25 @@ function getStatisticColor(impact: Impact) : string {
   }
 }
 
-const StatSimple: React.FunctionComponent<IStatSimpleProps> = ({ statistic }) => {
-  let ddClassNameAttribute = classNames(getStatisticColor(statistic.percentageImpact), 'mt-1 text-3xl font-semibold ');
+function renderArrowAndPercentageChange(statistic: Statistic) {
+  if (!statistic.percentageChange) {
+    console.log(`No arrow needed becase percentage change = ${statistic.percentageChange}`);
+    return null;
+  }
 
+  const color = getStatisticColor(statistic.percentageImpact);
+  const arrowClasses = 'self-center flex-shrink-0 h-5 w-5';
+  const arrow = statistic.percentageChange > 0 ? <ArrowSmUpIcon className={arrowClasses} aria-hidden="true" /> : <ArrowSmDownIcon className={arrowClasses} />;
+
+  return (<div className={color + ' text-base'}>{arrow}{statistic.percentageChange + '%'}</div>);
+}
+
+const StatSimple: React.FunctionComponent<IStatSimpleProps> = ({ statistic }) => {
   return (
     <>
       <div key={statistic.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
         <dt className="text-sm font-medium text-gray-500 truncate">{statistic.name}</dt>
-        <dd className={ddClassNameAttribute}>{statistic.stat}</dd>
+        <dd className='mt-1 text-3xl font-semibold flex items-center'>{statistic.stat}{renderArrowAndPercentageChange(statistic)}</dd>
       </div>
     </>
   );

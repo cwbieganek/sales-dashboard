@@ -10,8 +10,12 @@ import {
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
 
-// Custom types
-import type { Impact } from '../modules/Stats';
+// Custom components
+import StatSimple from '../components/StatSimple';
+
+// Custom modules
+import { classNames } from '../modules/Utils';
+import { getStatisticColor } from '../modules/Stats';
 
 // Fake data
 import { stats } from '../modules/Fake';
@@ -26,23 +30,6 @@ const userNavigation = [
   { name: 'Settings', href: '#' },
   { name: 'Sign out', href: '#' },
 ]
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
-
-function getStatisticColor(impact: Impact) : string {
-  switch (impact) {
-    case "GOOD":
-      return "text-green-600";
-    case "BAD":
-      return "text-red-600";
-    case "NEUTRAL":
-      return "text-gray-900";
-    default:
-      throw new Error(`${impact} is not a valid Statistic impact.`);
-  }
-}
 
 export default function Example() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -261,10 +248,7 @@ export default function Example() {
                   <h3 className="text-lg leading-6 font-medium text-gray-900">Last 30 days</h3>
                   <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
                     {stats.map((item) => (
-                      <div key={item.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
-                        <dt className="text-sm font-medium text-gray-500 truncate">{item.name}</dt>
-                        <dd className={classNames(getStatisticColor(item.percentageImpact), 'mt-1 text-3xl font-semibold ')}>{item.stat}</dd>
-                      </div>
+                      <StatSimple statistic={item}/>
                     ))}
                   </dl>
                 </div>

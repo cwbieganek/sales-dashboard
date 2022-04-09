@@ -15,7 +15,6 @@ import StatsSimple from '../components/StatsSimple'
 
 // Custom modules
 import { classNames } from '../modules/Utils';
-import { getStatisticColor } from '../modules/Stats';
 
 // Fake data
 import { stats } from '../modules/Fake';

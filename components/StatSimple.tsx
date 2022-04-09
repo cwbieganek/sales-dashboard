@@ -23,13 +23,13 @@ function getStatisticColor(impact: Impact) : string {
   }
 }
 
-const StatSimple: React.FunctionComponent<IStatSimpleProps> = (props) => {
-  let dd = (<dd className={classNames(getStatisticColor(props.statistic.percentageImpact), 'mt-1 text-3xl font-semibold ')}>{props.statistic.stat}</dd>);
+const StatSimple: React.FunctionComponent<IStatSimpleProps> = ({ statistic }) => {
+  let dd = (<dd className={classNames(getStatisticColor(statistic.percentageImpact), 'mt-1 text-3xl font-semibold ')}>{statistic.stat}</dd>);
 
   return (
     <>
-      <div key={props.statistic.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
-        <dt className="text-sm font-medium text-gray-500 truncate">{props.statistic.name}</dt>
+      <div key={statistic.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
+        <dt className="text-sm font-medium text-gray-500 truncate">{statistic.name}</dt>
         {dd}
       </div>
     </>

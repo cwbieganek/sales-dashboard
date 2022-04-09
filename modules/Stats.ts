@@ -4,5 +4,5 @@ export interface Statistic {
   name: string;
   stat: string | number;
   percentageChange?: number;
-  impact: Impact;
+  percentageImpact: Impact;
 };

@@ -263,7 +263,7 @@ export default function Example() {
                     {stats.map((item) => (
                       <div key={item.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
                         <dt className="text-sm font-medium text-gray-500 truncate">{item.name}</dt>
-                        <dd className={classNames(getStatisticColor(item.impact), 'mt-1 text-3xl font-semibold ')}>{item.stat}</dd>
+                        <dd className={classNames(getStatisticColor(item.percentageImpact), 'mt-1 text-3xl font-semibold ')}>{item.stat}</dd>
                       </div>
                     ))}
                   </dl>

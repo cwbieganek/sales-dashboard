@@ -10,14 +10,8 @@ import {
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
 
-type Impact = "GOOD" | "BAD" | "NEUTRAL";
-
-interface Statistic {
-  name: string;
-  stat: string | number;
-  percentageChange?: number;
-  impact: Impact;
-}
+// Custom types
+import type { Impact, Statistic } from '../modules/Stats';
 
 const navigation = [
   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },

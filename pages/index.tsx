@@ -11,7 +11,7 @@ import {
 import { SearchIcon } from '@heroicons/react/solid'
 
 // Custom types
-import type { Impact, Statistic } from '../modules/Stats';
+import type { Impact } from '../modules/Stats';
 
 // Fake data
 import { stats } from '../modules/Fake';

@@ -9,11 +9,11 @@ import type { Statistic } from "../modules/Stats";
 // Custom modules
 import { classNames } from "../modules/Utils";
 
-interface IAppProps {
+interface IStatsSimpleProps {
   statistics: Statistic[];
 }
 
-const StatsSimple: React.FunctionComponent<IAppProps> = ({ statistics }) => {
+const StatsSimple: React.FunctionComponent<IStatsSimpleProps> = ({ statistics }) => {
   return (
     <>
       <div>

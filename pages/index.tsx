@@ -10,10 +10,13 @@ import {
 } from '@heroicons/react/outline'
 import { SearchIcon } from '@heroicons/react/solid'
 
+type Impact = "GOOD" | "BAD" | "NEUTRAL";
+
 interface Statistic {
   name: string;
   stat: string | number;
   percentageChange?: number;
+  impact: Impact;
 }
 
 const navigation = [
@@ -28,15 +31,28 @@ const userNavigation = [
 ]
 
 const stats: Statistic[] = [
-  { name: 'Total Sales', stat: '10,142' },
-  { name: 'Gross Revenue', stat: '$202,840' },
-  { name: 'Net Profit', stat: '$50,710' },
-  { name: 'Reviews', stat: '127' },
-  { name: 'Returns', stat: '13' },
+  { name: 'Total Sales', stat: '10,142', impact: "GOOD"},
+  { name: 'Gross Revenue', stat: '$202,840', impact: "GOOD" },
+  { name: 'Net Profit', stat: '$50,710', impact: "GOOD" },
+  { name: 'Reviews', stat: '127', impact: "NEUTRAL" },
+  { name: 'Returns', stat: '13', impact: "BAD" },
 ]
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
+}
+
+function getStatisticColor(impact: Impact) : string {
+  switch (impact) {
+    case "GOOD":
+      return "text-green-600";
+    case "BAD":
+      return "text-red-600";
+    case "NEUTRAL":
+      return "text-gray-900";
+    default:
+      throw new Error(`${impact} is not a valid Statistic impact.`);
+  }
 }
 
 export default function Example() {
@@ -256,9 +272,9 @@ export default function Example() {
                   <h3 className="text-lg leading-6 font-medium text-gray-900">Last 30 days</h3>
                   <dl className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-3">
                     {stats.map((item) => (
-                      <div key={item.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6">
+                      <div key={item.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
                         <dt className="text-sm font-medium text-gray-500 truncate">{item.name}</dt>
-                        <dd className="mt-1 text-3xl font-semibold text-gray-900">{item.stat}</dd>
+                        <dd className={classNames(getStatisticColor(item.impact), 'mt-1 text-3xl font-semibold ')}>{item.stat}</dd>
                       </div>
                     ))}
                   </dl>

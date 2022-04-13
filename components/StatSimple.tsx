@@ -39,7 +39,7 @@ function renderArrowAndPercentageChange(statistic: Statistic) {
   const arrowClasses = 'self-center flex-shrink-0 h-5 w-5';
   const arrow = statistic.percentageChange > 0 ? <ArrowSmUpIcon className={arrowClasses} aria-hidden="true" /> : <ArrowSmDownIcon className={arrowClasses} />;
 
-  return (<div className={color + ' text-base'}>{arrow}{statistic.percentageChange + '%'}</div>);
+  return (<div className={color + ' text-base flex'}>{arrow}{statistic.percentageChange + '%'}</div>);
 }
 
 const StatSimple: React.FunctionComponent<IStatSimpleProps> = ({ statistic }) => {
@@ -47,7 +47,7 @@ const StatSimple: React.FunctionComponent<IStatSimpleProps> = ({ statistic }) =>
     <>
       <div key={statistic.name} className="px-4 py-5 bg-white shadow rounded-lg overflow-hidden sm:p-6 border-2 border-transparent hover:border-gray-300">
         <dt className="text-sm font-medium text-gray-500 truncate">{statistic.name}</dt>
-        <dd className='mt-1 text-3xl font-semibold flex items-center'>{statistic.stat}{renderArrowAndPercentageChange(statistic)}</dd>
+        <dd className='mt-1 text-3xl font-semibold flex items-center'><div>{statistic.stat}</div><div>{renderArrowAndPercentageChange(statistic)}</div></dd>
       </div>
     </>
   );

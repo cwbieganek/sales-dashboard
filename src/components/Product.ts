@@ -9,4 +9,5 @@ export interface Product {
 	wholesaleCost: number;
 	sales: number;
 	category: ProductCategory;
+	thumbnail: string;
 }

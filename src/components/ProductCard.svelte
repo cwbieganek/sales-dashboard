@@ -5,7 +5,7 @@
 </script>
 
 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-	<img class="w-full" src="/img/card-top.jpg" alt={product.description} />
+	<img class="w-full" src={product.thumbnail} alt={product.description} />
 	<div class="px-6 py-4">
 		<div class="font-bold text-xl mb-2">{product.name}</div>
 		<div class="text-gray-700 text-base">

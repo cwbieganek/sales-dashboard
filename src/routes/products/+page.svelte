@@ -9,6 +9,7 @@
 		wholesaleCost: 20.0,
 		sales: 1000,
 		category: ProductCategory.Kitchen,
+		thumbnail: '/img/card-top.jpg',
 	};
 </script>
 

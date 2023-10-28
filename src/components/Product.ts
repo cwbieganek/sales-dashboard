@@ -1,5 +1,8 @@
 export enum ProductCategory {
-	Kitchen = 'Kitchen',
+	KITCHEN = 'Kitchen',
+	BOOKS = 'Books',
+	OFFICE = 'Office',
+	GAMING = 'Gaming',
 }
 
 export interface Product {

@@ -50,7 +50,7 @@
 		</div>
 	</div>
 </div>
-<div class="grid grid-cols-4 gap-4 p-4">
+<div class="grid grid-cols-4 gap-2 p-2">
 	{#each filteredProducts as product}
 		<ProductCard {product} />
 	{/each}

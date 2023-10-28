@@ -20,7 +20,7 @@
 </script>
 
 <h1 class="text-xl text-center font-semibold border-b border-gray-400 p-4 mt-4 mb-4">Products</h1>
-<!-- Product Search -->
+<!-- Product Search and Sorting-->
 <div class="flex items-center justify-center">
 	<div class="w-full max-w-lg lg:max-w-xs">
 		<label for="search" class="sr-only">Search</label>

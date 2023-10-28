@@ -10,12 +10,18 @@
 
 	function searchProductsByName(products: Product[], nameQuery: string): Product[] {
 		if (nameQuery.trim() == '') {
-			return products;
+			return products.toSorted((a, b) => {
+				return a.listPrice - b.listPrice;
+			});
 		}
 
-		return products.filter((product) => {
-			return product.name.toLowerCase().includes(nameQuery.toLowerCase());
-		});
+		return products
+			.filter((product) => {
+				return product.name.toLowerCase().includes(nameQuery.toLowerCase());
+			})
+			.toSorted((a, b) => {
+				return a.listPrice - b.listPrice;
+			});
 	}
 </script>
 

@@ -5,6 +5,9 @@
 	import rawProducts from './products.json';
 
 	const products = productsSchema.parse(rawProducts) as Product[];
+	let nameQuery = '';
+	$: filteredProducts = searchProductsByName(products, nameQuery);
+
 	function searchProductsByName(products: Product[], nameQuery: string): Product[] {
 		if (nameQuery.trim() == '') {
 			return products;
@@ -42,12 +45,13 @@
 				class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6"
 				placeholder="Search products"
 				type="search"
+				bind:value={nameQuery}
 			/>
 		</div>
 	</div>
 </div>
 <div class="grid grid-cols-4 gap-4 p-4">
-	{#each products as product}
+	{#each filteredProducts as product}
 		<ProductCard {product} />
 	{/each}
 </div>

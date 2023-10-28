@@ -4,9 +4,9 @@
 	import ProductCard from '../../components/ProductCard.svelte';
 	import rawProducts from './products.json';
 
-	const products = productsSchema.parse(rawProducts) as Product[];
+	const productsFromJson = productsSchema.parse(rawProducts) as Product[];
 	let nameQuery = '';
-	$: filteredProducts = searchProductsByName(products, nameQuery);
+	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery);
 
 	function searchProductsByName(products: Product[], nameQuery: string): Product[] {
 		if (nameQuery.trim() == '') {

@@ -8,6 +8,10 @@
 	let nameQuery = '';
 	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery);
 
+	/**
+	 * Searches the list of products for all products whose name contains the name query.
+	 * The returned list will be sorted by ascending list price.
+	 */
 	function searchProductsByName(products: Product[], nameQuery: string): Product[] {
 		if (nameQuery.trim() == '') {
 			return products.toSorted((a, b) => {

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { z } from 'zod';
 	import type { Product } from '../../components/Product';
 	import { productsSchema } from './productsSchema';
 	import ProductCard from '../../components/ProductCard.svelte';

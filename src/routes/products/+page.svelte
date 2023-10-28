@@ -59,8 +59,12 @@
 			/>
 		</div>
 		<!-- Sort By -->
-		<div>
-			<label for="sort-by" class="block text-sm font-medium leading-6 text-gray-900">Sort By</label>
+		<div class="flex flex-row items-center">
+			<label
+				for="sort-by"
+				class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap mr-2"
+				>Sort By</label
+			>
 			<select
 				id="sort-by"
 				name="sort-by"
@@ -72,8 +76,10 @@
 			</select>
 		</div>
 		<!-- Sort Order -->
-		<div>
-			<label for="sort-order" class="block text-sm font-medium leading-6 text-gray-900"
+		<div class="flex flex-row items-center">
+			<label
+				for="sort-order"
+				class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap mr-2"
 				>Sort Order</label
 			>
 			<select

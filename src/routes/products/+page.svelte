@@ -5,6 +5,15 @@
 	import rawProducts from './products.json';
 
 	const products = productsSchema.parse(rawProducts) as Product[];
+	function searchProductsByName(products: Product[], nameQuery: string): Product[] {
+		if (nameQuery.trim() == '') {
+			return products;
+		}
+
+		return products.filter((product) => {
+			return product.name.toLowerCase().includes(nameQuery.toLowerCase());
+		});
+	}
 </script>
 
 <h1 class="text-xl text-center font-semibold border-b border-gray-400 p-4 mt-4 mb-4">Products</h1>

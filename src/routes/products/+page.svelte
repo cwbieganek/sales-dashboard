@@ -31,7 +31,7 @@
 
 <h1 class="text-xl text-center font-semibold border-b border-gray-400 p-4 mt-4 mb-4">Products</h1>
 <!-- Product Search and Sorting-->
-<div class="flex items-center justify-center">
+<div class="flex items-center justify-center gap-2">
 	<div class="w-full max-w-lg lg:max-w-xs">
 		<!-- Search Bar -->
 		<label for="search" class="sr-only">Search</label>
@@ -61,38 +61,31 @@
 		</div>
 	</div>
 	<!-- Sort By -->
-	<div class="flex flex-row items-center">
-		<label
-			for="sort-by"
-			class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap mr-2"
-			>Sort By</label
-		>
-		<select
-			id="sort-by"
-			name="sort-by"
-			class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
-		>
-			<option selected>List Price</option>
-			<option>Wholesale Cost</option>
-			<option>Sales</option>
-		</select>
-	</div>
+	<label for="sort-by" class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap"
+		>Sort By</label
+	>
+	<select
+		id="sort-by"
+		name="sort-by"
+		class="block rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
+	>
+		<option selected>List Price</option>
+		<option>Wholesale Cost</option>
+		<option>Sales</option>
+	</select>
 	<!-- Sort Order -->
-	<div class="flex flex-row items-center">
-		<label
-			for="sort-order"
-			class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap mr-2"
-			>Sort Order</label
-		>
-		<select
-			id="sort-order"
-			name="sort-order"
-			class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
-		>
-			<option selected>Ascending</option>
-			<option>Descending</option>
-		</select>
-	</div>
+	<label
+		for="sort-order"
+		class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap">Sort Order</label
+	>
+	<select
+		id="sort-order"
+		name="sort-order"
+		class="block rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
+	>
+		<option selected>Ascending</option>
+		<option>Descending</option>
+	</select>
 </div>
 <div class="grid grid-cols-4 gap-2 p-2">
 	{#each filteredProducts as product}

@@ -6,7 +6,8 @@
 
 	const productsFromJson = productsSchema.parse(rawProducts) as Product[];
 	let nameQuery = '';
-	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery, 'name');
+	let sortKey: keyof Product = 'name';
+	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery, sortKey);
 
 	/**
 	 * Searches the list of products for all products whose name contains the name query.
@@ -84,10 +85,13 @@
 		id="sort-by"
 		name="sort-by"
 		class="block rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
+		bind:value={sortKey}
 	>
-		<option selected>List Price</option>
-		<option>Wholesale Cost</option>
-		<option>Sales</option>
+		<!-- All these option values are keys of the Product type -->
+		<option value="name" selected>Name</option>
+		<option value="listPrice">List Price</option>
+		<option value="wholesaleCost">Wholesale Cost</option>
+		<option value="sales">Sales</option>
 	</select>
 	<!-- Sort Order -->
 	<label

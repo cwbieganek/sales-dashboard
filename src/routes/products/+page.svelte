@@ -25,21 +25,11 @@
 		sortKey: K,
 		sortOrder = SortOrder.ASCENDING
 	): Product[] {
-		if (nameQuery.trim() == '') {
-			return products.toSorted((a, b) => {
-				if (a[sortKey] < b[sortKey]) {
-					return sortOrder === SortOrder.ASCENDING ? -1 : 1;
-				} else if (a[sortKey] > b[sortKey]) {
-					return sortOrder === SortOrder.ASCENDING ? 1 : -1;
-				}
-
-				return 0;
-			});
-		}
+		const includeAllProducts = nameQuery.trim() == '';
 
 		return products
 			.filter((product) => {
-				return product.name.toLowerCase().includes(nameQuery.toLowerCase());
+				return includeAllProducts || product.name.toLowerCase().includes(nameQuery.toLowerCase());
 			})
 			.toSorted((a, b) => {
 				if (a[sortKey] < b[sortKey]) {

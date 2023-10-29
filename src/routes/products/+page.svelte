@@ -6,16 +6,26 @@
 
 	const productsFromJson = productsSchema.parse(rawProducts) as Product[];
 	let nameQuery = '';
-	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery);
+	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery, 'name');
 
 	/**
 	 * Searches the list of products for all products whose name contains the name query.
-	 * The returned list will be sorted by ascending list price.
+	 * The returned list will be sorted by the provided Product key.
 	 */
-	function searchProductsByName(products: Product[], nameQuery: string): Product[] {
+	function searchProductsByName<K extends keyof Product>(
+		products: Product[],
+		nameQuery: string,
+		sortKey: K
+	): Product[] {
 		if (nameQuery.trim() == '') {
 			return products.toSorted((a, b) => {
-				return a.listPrice - b.listPrice;
+				if (a[sortKey] < b[sortKey]) {
+					return -1;
+				} else if (a[sortKey] > b[sortKey]) {
+					return 1;
+				}
+
+				return 0;
 			});
 		}
 
@@ -24,7 +34,13 @@
 				return product.name.toLowerCase().includes(nameQuery.toLowerCase());
 			})
 			.toSorted((a, b) => {
-				return a.listPrice - b.listPrice;
+				if (a[sortKey] < b[sortKey]) {
+					return -1;
+				} else if (a[sortKey] > b[sortKey]) {
+					return 1;
+				}
+
+				return 0;
 			});
 	}
 </script>

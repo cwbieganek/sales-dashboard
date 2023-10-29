@@ -4,10 +4,16 @@
 	import ProductCard from '../../components/ProductCard.svelte';
 	import rawProducts from './products.json';
 
+	enum SortOrder {
+		ASCENDING = 'Ascending',
+		DESCENDING = 'Descending',
+	}
+
 	const productsFromJson = productsSchema.parse(rawProducts) as Product[];
 	let nameQuery = '';
 	let sortKey: keyof Product = 'name';
-	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery, sortKey);
+	let sortOrder = SortOrder.ASCENDING;
+	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery, sortKey, sortOrder);
 
 	/**
 	 * Searches the list of products for all products whose name contains the name query.
@@ -16,14 +22,15 @@
 	function searchProductsByName<K extends keyof Product>(
 		products: Product[],
 		nameQuery: string,
-		sortKey: K
+		sortKey: K,
+		sortOrder = SortOrder.ASCENDING
 	): Product[] {
 		if (nameQuery.trim() == '') {
 			return products.toSorted((a, b) => {
 				if (a[sortKey] < b[sortKey]) {
-					return -1;
+					return sortOrder === SortOrder.ASCENDING ? -1 : 1;
 				} else if (a[sortKey] > b[sortKey]) {
-					return 1;
+					return sortOrder === SortOrder.ASCENDING ? 1 : -1;
 				}
 
 				return 0;
@@ -36,9 +43,9 @@
 			})
 			.toSorted((a, b) => {
 				if (a[sortKey] < b[sortKey]) {
-					return -1;
+					return sortOrder === SortOrder.ASCENDING ? -1 : 1;
 				} else if (a[sortKey] > b[sortKey]) {
-					return 1;
+					return sortOrder === SortOrder.ASCENDING ? 1 : -1;
 				}
 
 				return 0;
@@ -102,9 +109,10 @@
 		id="sort-order"
 		name="sort-order"
 		class="block rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
+		bind:value={sortOrder}
 	>
-		<option selected>Ascending</option>
-		<option>Descending</option>
+		<option value="Ascending" selected>Ascending</option>
+		<option value="Descending">Descending</option>
 	</select>
 </div>
 <div class="grid grid-cols-4 gap-2 p-2">

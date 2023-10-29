@@ -33,6 +33,7 @@
 <!-- Product Search and Sorting-->
 <div class="flex items-center justify-center">
 	<div class="w-full max-w-lg lg:max-w-xs">
+		<!-- Search Bar -->
 		<label for="search" class="sr-only">Search</label>
 		<div class="relative">
 			<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">

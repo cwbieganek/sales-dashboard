@@ -4,6 +4,8 @@
 	import ProductCard from '../../components/ProductCard.svelte';
 	import rawProducts from './products.json';
 
+	import Nav from "$lib/Nav.svelte"
+
 	enum SortOrder {
 		ASCENDING = 'Ascending',
 		DESCENDING = 'Descending',
@@ -43,7 +45,9 @@
 	}
 </script>
 
-<h1 class="text-xl text-center font-semibold border-b border-gray-400 p-4 mt-4 mb-4">Products</h1>
+<Nav active='products'/>  
+<!-- This Nav bar's active param is products, which shows the currently active link -->
+<h1 class="text-xl text-center font-semibold border-b border-gray-400 pt-28 p-4 mb-4">Products</h1>
 <!-- Product Search and Sorting-->
 <div class="flex items-center justify-center gap-2">
 	<div class="w-full max-w-lg lg:max-w-xs">

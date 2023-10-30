@@ -3,5 +3,5 @@
 </script>
 
 <div class="h-full">
-	<h1>Product #{data.id}</h1>
+	<h1>{data.product.name} #{data.id}</h1>
 </div>

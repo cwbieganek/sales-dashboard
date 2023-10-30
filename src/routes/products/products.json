@@ -1,5 +1,6 @@
 [
 	{
+		"id": 1,
 		"name": "Coffee Maker",
 		"description": "A fancy coffee maker that brews the best coffee possible.",
 		"listPrice": 40.0,
@@ -9,6 +10,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 2,
 		"name": "Vegetable Brush",
 		"description": "A brush for cleaning your vegetables.",
 		"listPrice": 5.0,
@@ -18,6 +20,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 3,
 		"name": "Xbox Series X",
 		"description": "A powerful gaming console capable of 4K 120 FPS.",
 		"listPrice": 300.0,
@@ -27,6 +30,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 4,
 		"name": "The Lord of the Rings: The Fellowship of the Ring",
 		"description": "A grand adventure about a brave little Hobbit.",
 		"listPrice": 20.0,
@@ -36,6 +40,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 5,
 		"name": "My Side of the Mountain",
 		"description": "A tale about running away from home.",
 		"listPrice": 15.0,
@@ -45,6 +50,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 6,
 		"name": "Standing Desk",
 		"description": "A desk that encourages you to stand more.",
 		"listPrice": 400.0,
@@ -54,6 +60,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 7,
 		"name": "Wireless Mouse",
 		"description": "A mouse that frees you from wires.",
 		"listPrice": 15.0,
@@ -63,6 +70,7 @@
 		"thumbnail": "/img/card-top.jpg"
 	},
 	{
+		"id": 8,
 		"name": "Mouse Pad",
 		"description": "Improves the performance of your mouse.",
 		"listPrice": 5.0,

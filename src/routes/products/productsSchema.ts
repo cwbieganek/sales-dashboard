@@ -3,6 +3,7 @@ import { ProductCategory } from '../../components/Product';
 
 export const productsSchema = z.array(
 	z.object({
+		id: z.number(),
 		name: z.string(),
 		description: z.string(),
 		listPrice: z.number(),

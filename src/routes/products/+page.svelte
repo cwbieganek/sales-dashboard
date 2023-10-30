@@ -43,9 +43,8 @@
 	}
 </script>
 
-<h1 class="text-xl text-center font-semibold border-b border-gray-400 p-4 mt-4 mb-4">Products</h1>
 <!-- Product Search and Sorting-->
-<div class="flex items-center justify-center gap-2">
+<div class="flex items-center justify-center gap-2 mt-2">
 	<div class="w-full max-w-lg lg:max-w-xs">
 		<!-- Search Bar -->
 		<label for="search" class="sr-only">Search</label>

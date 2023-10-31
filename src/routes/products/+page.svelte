@@ -1,19 +1,18 @@
 <script lang="ts">
 	import type { Product } from '../../components/Product';
-	import { productsSchema } from './productsSchema';
 	import ProductCard from '../../components/ProductCard.svelte';
-	import rawProducts from './products.json';
+
+	export let data;
 
 	enum SortOrder {
 		ASCENDING = 'Ascending',
 		DESCENDING = 'Descending',
 	}
 
-	const productsFromJson = productsSchema.parse(rawProducts) as Product[];
 	let nameQuery = '';
 	let sortKey: keyof Product = 'name';
 	let sortOrder = SortOrder.ASCENDING;
-	$: filteredProducts = searchProductsByName(productsFromJson, nameQuery, sortKey, sortOrder);
+	$: filteredProducts = searchProductsByName(data.products, nameQuery, sortKey, sortOrder);
 
 	/**
 	 * Searches the list of products for all products whose name contains the name query.

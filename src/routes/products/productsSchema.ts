@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ProductCategory } from '../../components/Product';
+import { ProductCategory } from '@/components/Product';
 
 export const productsSchema = z.array(
 	z.object({

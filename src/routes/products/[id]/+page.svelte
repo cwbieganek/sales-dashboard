@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProductSalesChart from '../../../components/ProductSalesChart.svelte';
+	import ProductSalesChart from '@/components/ProductSalesChart.svelte';
 
 	export let data;
 </script>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Product } from '../../components/Product';
-	import ProductCard from '../../components/ProductCard.svelte';
+	import type { Product } from '@/components/Product';
+	import ProductCard from '@/components/ProductCard.svelte';
 
 	export let data;
 

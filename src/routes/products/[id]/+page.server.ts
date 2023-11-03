@@ -1,4 +1,4 @@
-import type { Product } from '../../../components/Product';
+import type { Product } from '@/components/Product';
 import { productsSchema } from '../productsSchema';
 import rawProducts from '../products.json';
 

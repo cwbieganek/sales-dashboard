@@ -28,4 +28,4 @@
 	});
 </script>
 
-<canvas bind:this={ctx} />
+<canvas bind:this={ctx} class="border border-gray-600 rounded shadow-md shadow-gray-300" />

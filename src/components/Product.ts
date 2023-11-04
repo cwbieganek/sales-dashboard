@@ -14,4 +14,5 @@ export interface Product {
 	sales: number;
 	category: ProductCategory;
 	thumbnail: string;
+	salesByMonth: number[];
 }

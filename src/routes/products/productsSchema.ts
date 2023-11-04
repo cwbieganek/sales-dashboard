@@ -11,5 +11,6 @@ export const productsSchema = z.array(
 		sales: z.number(),
 		category: z.nativeEnum(ProductCategory),
 		thumbnail: z.string(),
+		salesByMonth: z.array(z.number()),
 	})
 );

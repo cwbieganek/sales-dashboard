@@ -8,7 +8,9 @@
 </script>
 
 <div class="h-full">
-	<h1 class="flex items-center justify-center align-middle bg-gray-200 h-10">
+	<h1
+		class="flex items-center justify-center align-middle bg-gray-200 border-b border-gray-300 text-gray-900 h-10 text-2xl"
+	>
 		{data.product.name} (Product #{data.product.id})
 	</h1>
 	<div class="w-3/12 mx-auto mt-2">

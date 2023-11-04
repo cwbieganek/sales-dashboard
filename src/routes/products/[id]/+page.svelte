@@ -2,6 +2,9 @@
 	import ProductSalesChart from '@/components/ProductSalesChart.svelte';
 
 	export let data;
+	let product = data.product;
+
+	let totalProfit = (product.listPrice - product.wholesaleCost) * product.sales;
 </script>
 
 <div class="h-full">
@@ -16,11 +19,13 @@
 			<div>
 				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
 			</div>
-			<div>
-				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
+			<div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+				<dt class="truncate text-sm font-medium text-gray-500">Total Subscribers</dt>
+				<dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">71,897</dd>
 			</div>
-			<div>
-				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
+			<div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
+				<dt class="truncate text-sm font-medium text-gray-500">Total Subscribers</dt>
+				<dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">71,897</dd>
 			</div>
 		</div>
 	</div>

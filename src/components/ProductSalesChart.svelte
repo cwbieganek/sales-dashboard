@@ -2,17 +2,32 @@
 	import Chart from 'chart.js/auto';
 	import { onMount } from 'svelte';
 
+	export let salesByMonth: number[];
+
 	let ctx: HTMLCanvasElement;
 
 	onMount(async () => {
 		new Chart(ctx, {
 			type: 'line',
 			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				labels: [
+					'January',
+					'February',
+					'March',
+					'April',
+					'May',
+					'June',
+					'July',
+					'August',
+					'September',
+					'October',
+					'November',
+					'December',
+				],
 				datasets: [
 					{
-						label: '# of Votes',
-						data: [12, 19, 3, 5, 2, 3],
+						label: 'Sales by Month',
+						data: salesByMonth,
 					},
 				],
 			},

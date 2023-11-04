@@ -11,7 +11,17 @@
 	<div class="w-3/12 mx-auto mt-2">
 		<img src={data.product.thumbnail} alt={data.product.name} class="rounded-sm" />
 	</div>
-	<div class="w-6/12 m-auto h-full">
-		<ProductSalesChart salesByMonth={data.product.salesByMonth} />
+	<div class="h-full">
+		<div class="grid grid-cols-3 gap-2 p-2">
+			<div>
+				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
+			</div>
+			<div>
+				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
+			</div>
+			<div>
+				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
+			</div>
+		</div>
 	</div>
 </div>

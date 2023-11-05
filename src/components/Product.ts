@@ -6,6 +6,7 @@ export enum ProductCategory {
 }
 
 export interface Product {
+	id: number;
 	name: string;
 	description: string;
 	listPrice: number;
@@ -13,4 +14,5 @@ export interface Product {
 	sales: number;
 	category: ProductCategory;
 	thumbnail: string;
+	salesByMonth: number[];
 }

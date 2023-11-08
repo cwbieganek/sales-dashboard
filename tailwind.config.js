@@ -2,7 +2,11 @@
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		extend: {}
+		extend: {
+			colors: {
+				brand: '#86D2FD',
+			},
+		},
 	},
-	plugins: [require('@tailwindcss/forms')]
+	plugins: [require('@tailwindcss/forms')],
 };

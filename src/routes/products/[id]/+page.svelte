@@ -7,28 +7,19 @@
 	let totalProfit = (product.listPrice - product.wholesaleCost) * product.sales;
 </script>
 
-<div class="h-full">
-	<h1
-		class="flex items-center justify-center align-middle bg-gray-200 border-b border-gray-300 text-gray-900 h-10 text-2xl"
-	>
-		{data.product.name} (Product #{data.product.id})
-	</h1>
-	<div class="w-3/12 mx-auto mt-2">
-		<img src={data.product.thumbnail} alt={data.product.name} class="rounded-sm" />
-	</div>
-	<div class="h-full">
-		<div class="grid grid-cols-3 gap-2 p-2">
-			<div>
-				<ProductSalesChart salesByMonth={data.product.salesByMonth} />
-			</div>
-			<div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-				<dt class="truncate text-sm font-medium text-gray-500">Total Subscribers</dt>
-				<dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">71,897</dd>
-			</div>
-			<div class="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6">
-				<dt class="truncate text-sm font-medium text-gray-500">Total Subscribers</dt>
-				<dd class="mt-1 text-3xl font-semibold tracking-tight text-gray-900">71,897</dd>
-			</div>
-		</div>
+<div class="h-full px-28">
+	<div class="flex flex-row items-center">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7 fill-brand">
+			<path
+				d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"
+			/>
+			<path
+				d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"
+			/>
+		</svg>
+		<div class="text-2xl mx-2">/</div>
+		<div>PRODUCTS</div>
+		<div class="text-2xl mx-2">/</div>
+		<span>COFFEE MAKER</span>
 	</div>
 </div>

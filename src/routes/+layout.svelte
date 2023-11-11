@@ -4,7 +4,7 @@
 </script>
 
 <div class="app min-h-screen">
-	<main class="bg-gray-100 min-h-screen">
+	<main class="bg-gray-950 min-h-screen">
 		<Navbar />
 		<slot />
 	</main>

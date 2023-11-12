@@ -1,4 +1,6 @@
-<nav class="bg-gray-800 h-20 flex flex-row justify-evenly text-white px-4">
+<nav
+	class="bg-gray-900 border-b border-b-gray-800 h-20 flex flex-row justify-evenly text-white px-4"
+>
 	<div class="flex flex-row items-center gap-2 w-4/12 text-brand font-semibold text-2xl">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

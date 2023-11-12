@@ -4,7 +4,11 @@
 	export let data;
 	let product = data.product;
 
-	let totalProfit = (product.listPrice - product.wholesaleCost) * product.sales;
+	const profitPerSale = product.listPrice - product.wholesaleCost;
+	const totalProfit = profitPerSale * product.sales;
+	const profitByMonth = product.salesByMonth.map((sales) => {
+		return sales * profitPerSale;
+	});
 </script>
 
 <div class="h-full px-28 pb-6">
@@ -27,9 +31,19 @@
 	<!-- Charts container -->
 	<div class="flex flex-row gap-6">
 		<!-- Chart 1 -->
-		<div class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80" />
+		<div
+			class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80 p-2"
+		>
+			<h3 class="text-white font-semibold mb-2">Sales by Month</h3>
+			<ProductSalesChart salesByMonth={product.salesByMonth} />
+		</div>
 		<!-- Chart 2 -->
-		<div class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80" />
+		<div
+			class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80 p-2"
+		>
+			<h3 class="text-white font-semibold mb-2">Profit by Month</h3>
+			<ProductSalesChart salesByMonth={profitByMonth} />
+		</div>
 	</div>
 	<!-- Stats container -->
 	<div

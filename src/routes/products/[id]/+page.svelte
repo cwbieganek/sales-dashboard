@@ -7,7 +7,7 @@
 	let totalProfit = (product.listPrice - product.wholesaleCost) * product.sales;
 </script>
 
-<div class="h-full px-28">
+<div class="h-full px-28 pb-6">
 	<!-- Breadcrumbs container -->
 	<div class="flex flex-row items-center text-white my-2">
 		<!-- Breadcrumbs home logo -->
@@ -27,8 +27,12 @@
 	<!-- Charts container -->
 	<div class="flex flex-row gap-6">
 		<!-- Chart 1 -->
-		<div class="bg-gray-900 border rounded-md border-gray-800 w-6/12 h-80" />
+		<div class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80" />
 		<!-- Chart 2 -->
-		<div class="bg-gray-900 border rounded-md border-gray-800 w-6/12 h-80" />
+		<div class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80" />
 	</div>
+	<!-- Stats container -->
+	<div
+		class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-full h-80 mt-6"
+	/>
 </div>

@@ -24,4 +24,11 @@
 		<div class="text-2xl mx-2">/</div>
 		<span>COFFEE MAKER</span>
 	</div>
+	<!-- Charts container -->
+	<div class="flex flex-row gap-6">
+		<!-- Chart 1 -->
+		<div class="bg-gray-900 border rounded-md border-gray-800 w-6/12 h-80" />
+		<!-- Chart 2 -->
+		<div class="bg-gray-900 border rounded-md border-gray-800 w-6/12 h-80" />
+	</div>
 </div>

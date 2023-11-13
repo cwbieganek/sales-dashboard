@@ -37,11 +37,17 @@
 						ticks: {
 							color: '#f9fafb',
 						},
+						grid: {
+							color: '#6b7280',
+						},
 					},
 					y: {
 						beginAtZero: true,
 						ticks: {
 							color: '#f9fafb',
+						},
+						grid: {
+							color: '#6b7280',
 						},
 					},
 				},

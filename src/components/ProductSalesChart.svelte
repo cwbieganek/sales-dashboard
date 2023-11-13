@@ -33,8 +33,23 @@
 			},
 			options: {
 				scales: {
+					x: {
+						ticks: {
+							color: '#f9fafb',
+						},
+					},
 					y: {
 						beginAtZero: true,
+						ticks: {
+							color: '#f9fafb',
+						},
+					},
+				},
+				plugins: {
+					legend: {
+						labels: {
+							color: '#f9fafb',
+						},
 					},
 				},
 			},

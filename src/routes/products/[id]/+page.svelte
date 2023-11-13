@@ -47,6 +47,43 @@
 	</div>
 	<!-- Stats container -->
 	<div
-		class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-full h-80 mt-6"
-	/>
+		class="grid grid-cols-3 grid-rows-2 p-2 bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-full h-80 mt-6"
+	>
+		<!-- Total Profit -->
+		<div class="flex flex-col text-center">
+			<div class="text-gray-200">Total Profit</div>
+			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
+			<div class="text-lime-500">+$12,000</div>
+		</div>
+		<!-- Sales -->
+		<div class="flex flex-col text-center">
+			<div class="text-gray-200">Total Profit</div>
+			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
+			<div class="text-lime-500">+$12,000</div>
+		</div>
+		<!-- Returns -->
+		<div class="flex flex-col text-center">
+			<div class="text-gray-200">Total Profit</div>
+			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
+			<div class="text-lime-500">+$12,000</div>
+		</div>
+		<!-- Returns -->
+		<div class="flex flex-col text-center">
+			<div class="text-gray-200">Total Profit</div>
+			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
+			<div class="text-lime-500">+$12,000</div>
+		</div>
+		<!-- Returns -->
+		<div class="flex flex-col text-center">
+			<div class="text-gray-200">Total Profit</div>
+			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
+			<div class="text-lime-500">+$12,000</div>
+		</div>
+		<!-- Returns -->
+		<div class="flex flex-col text-center">
+			<div class="text-gray-200">Total Profit</div>
+			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
+			<div class="text-lime-500">+$12,000</div>
+		</div>
+	</div>
 </div>

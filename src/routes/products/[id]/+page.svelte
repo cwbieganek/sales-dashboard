@@ -54,7 +54,7 @@
 		<!-- Total Profit -->
 		<Stat
 			title="Total Profit"
-			num={42000}
+			num={totalProfit}
 			goodOrBad={GoodOrBad.GOOD}
 			change={12000}
 			formatAsCurrency

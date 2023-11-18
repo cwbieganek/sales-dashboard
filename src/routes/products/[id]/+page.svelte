@@ -63,7 +63,6 @@
 		<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} formatAsCurrency />
 		<!-- Returns -->
 		<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
-		<!-- Returns -->
 		<!-- Total Profit -->
 		<Stat
 			title="Total Profit"

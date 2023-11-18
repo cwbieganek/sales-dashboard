@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 
 	export let salesByMonth: number[];
+	export let label: string;
 
 	let ctx: HTMLCanvasElement;
 
@@ -26,15 +27,36 @@
 				],
 				datasets: [
 					{
-						label: 'Sales by Month',
+						label: label,
 						data: salesByMonth,
 					},
 				],
 			},
 			options: {
 				scales: {
+					x: {
+						ticks: {
+							color: '#f9fafb',
+						},
+						grid: {
+							color: '#6b7280',
+						},
+					},
 					y: {
 						beginAtZero: true,
+						ticks: {
+							color: '#f9fafb',
+						},
+						grid: {
+							color: '#6b7280',
+						},
+					},
+				},
+				plugins: {
+					legend: {
+						labels: {
+							color: '#f9fafb',
+						},
 					},
 				},
 			},
@@ -42,4 +64,4 @@
 	});
 </script>
 
-<canvas bind:this={ctx} class="border border-gray-600 bg-white rounded shadow-md shadow-gray-300" />
+<canvas bind:this={ctx} class="border border-gray-700 bg-gray-800 rounded-md" />

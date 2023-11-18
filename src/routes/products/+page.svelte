@@ -73,8 +73,8 @@
 		</div>
 	</div>
 	<!-- Sort By -->
-	<label for="sort-by" class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap"
-		>Sort By</label
+	<label for="sort-by" class="block text-sm font-medium leading-6 text-gray-100 whitespace-nowrap"
+		>Sort By:</label
 	>
 	<select
 		id="sort-by"
@@ -91,7 +91,7 @@
 	<!-- Sort Order -->
 	<label
 		for="sort-order"
-		class="block text-sm font-medium leading-6 text-gray-900 whitespace-nowrap">Sort Order</label
+		class="block text-sm font-medium leading-6 text-gray-100 whitespace-nowrap">Sort Order:</label
 	>
 	<select
 		id="sort-order"

@@ -60,34 +60,33 @@
 			formatAsCurrency
 		/>
 		<!-- Sales -->
-		<div class="flex flex-col text-center">
-			<div class="text-gray-200">Total Profit</div>
-			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
-			<div class="text-lime-500">+$12,000</div>
-		</div>
+		<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} formatAsCurrency />
 		<!-- Returns -->
-		<div class="flex flex-col text-center">
-			<div class="text-gray-200">Total Profit</div>
-			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
-			<div class="text-lime-500">+$12,000</div>
-		</div>
+		<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
 		<!-- Returns -->
-		<div class="flex flex-col text-center">
-			<div class="text-gray-200">Total Profit</div>
-			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
-			<div class="text-lime-500">+$12,000</div>
-		</div>
-		<!-- Returns -->
-		<div class="flex flex-col text-center">
-			<div class="text-gray-200">Total Profit</div>
-			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
-			<div class="text-lime-500">+$12,000</div>
-		</div>
-		<!-- Returns -->
-		<div class="flex flex-col text-center">
-			<div class="text-gray-200">Total Profit</div>
-			<div class="text-gray-100 font-bold text-4xl">$42,000</div>
-			<div class="text-lime-500">+$12,000</div>
-		</div>
+		<!-- Total Profit -->
+		<Stat
+			title="Total Profit"
+			num={42000}
+			goodOrBad={GoodOrBad.GOOD}
+			change={12000}
+			formatAsCurrency
+		/>
+		<!-- Total Profit -->
+		<Stat
+			title="Total Profit"
+			num={42000}
+			goodOrBad={GoodOrBad.GOOD}
+			change={12000}
+			formatAsCurrency
+		/>
+		<!-- Total Profit -->
+		<Stat
+			title="Total Profit"
+			num={42000}
+			goodOrBad={GoodOrBad.GOOD}
+			change={12000}
+			formatAsCurrency
+		/>
 	</div>
 </div>

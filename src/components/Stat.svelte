@@ -7,7 +7,14 @@
 	export let change: number;
 	export let formatAsCurrency = false;
 
-	const changeTextColor = goodOrBad === GoodOrBad.GOOD ? 'text-lime-500' : 'text-red-500';
+	$: changeTextColor = goodOrBad === GoodOrBad.GOOD ? 'text-lime-500' : 'text-red-500';
+	$: changeFormatted = formatChange(change, formatAsCurrency);
+
+	function formatChange(change: number, formatAsCurrency: boolean): string {
+		const plusOrMinus = change >= 0 ? '+' : '-';
+		const dollarSignOrEmptyString = formatAsCurrency ? '$' : '';
+		return `${plusOrMinus}${dollarSignOrEmptyString}${change.toLocaleString()}`;
+	}
 </script>
 
 <div class="flex flex-col text-center">
@@ -16,6 +23,6 @@
 		{`${formatAsCurrency ? '$' : ''}${num.toLocaleString()}`}
 	</div>
 	<div class={changeTextColor}>
-		{`${formatAsCurrency ? '$' : ''}${change.toLocaleString()}`}
+		{changeFormatted}
 	</div>
 </div>

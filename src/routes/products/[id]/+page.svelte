@@ -60,26 +60,14 @@
 			formatAsCurrency
 		/>
 		<!-- Sales -->
-		<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} formatAsCurrency />
+		<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} />
 		<!-- Returns -->
 		<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
 		<!-- Total Profit -->
-		<Stat
-			title="Total Profit"
-			num={42000}
-			goodOrBad={GoodOrBad.GOOD}
-			change={12000}
-			formatAsCurrency
-		/>
+		<Stat title="Product Views" num={56000} goodOrBad={GoodOrBad.GOOD} change={8000} />
 		<!-- Average Rating -->
 		<Stat title="Average Rating (out of 5)" num={4.5} goodOrBad={GoodOrBad.GOOD} change={0.5} />
-		<!-- Total Profit -->
-		<Stat
-			title="Total Profit"
-			num={42000}
-			goodOrBad={GoodOrBad.GOOD}
-			change={12000}
-			formatAsCurrency
-		/>
+		<!-- Unique Customers -->
+		<Stat title="Unique Customers" num={2400} goodOrBad={GoodOrBad.GOOD} change={400} />
 	</div>
 </div>

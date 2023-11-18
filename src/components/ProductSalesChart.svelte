@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 
 	export let salesByMonth: number[];
+	export let label: string;
 
 	let ctx: HTMLCanvasElement;
 
@@ -26,7 +27,7 @@
 				],
 				datasets: [
 					{
-						label: 'Sales by Month',
+						label: label,
 						data: salesByMonth,
 					},
 				],

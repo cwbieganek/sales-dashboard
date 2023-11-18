@@ -48,26 +48,29 @@
 		</div>
 	</div>
 	<!-- Stats container -->
-	<div
-		class="grid grid-cols-3 grid-rows-2 p-2 bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-full h-80 mt-6"
-	>
-		<!-- Total Profit -->
-		<Stat
-			title="Total Profit"
-			num={totalProfit}
-			goodOrBad={GoodOrBad.GOOD}
-			change={12000}
-			formatAsCurrency
-		/>
-		<!-- Sales -->
-		<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} />
-		<!-- Returns -->
-		<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
-		<!-- Total Profit -->
-		<Stat title="Product Views" num={56000} goodOrBad={GoodOrBad.GOOD} change={8000} />
-		<!-- Average Rating -->
-		<Stat title="Average Rating (out of 5)" num={4.5} goodOrBad={GoodOrBad.GOOD} change={0.5} />
-		<!-- Unique Customers -->
-		<Stat title="Unique Customers" num={2400} goodOrBad={GoodOrBad.GOOD} change={400} />
+	<div class="w-full h-80 mt-6 bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700">
+		<div class="text-white text-center">
+			<span class="text-3xl">Stats </span><span>(last year)</span>
+		</div>
+		<div class="grid grid-cols-3 grid-rows-2 p-2">
+			<!-- Total Profit -->
+			<Stat
+				title="Total Profit"
+				num={totalProfit}
+				goodOrBad={GoodOrBad.GOOD}
+				change={12000}
+				formatAsCurrency
+			/>
+			<!-- Sales -->
+			<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} />
+			<!-- Returns -->
+			<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
+			<!-- Total Profit -->
+			<Stat title="Product Views" num={56000} goodOrBad={GoodOrBad.GOOD} change={8000} />
+			<!-- Average Rating -->
+			<Stat title="Average Rating (out of 5)" num={4.5} goodOrBad={GoodOrBad.GOOD} change={0.5} />
+			<!-- Unique Customers -->
+			<Stat title="Unique Customers" num={2400} goodOrBad={GoodOrBad.GOOD} change={400} />
+		</div>
 	</div>
 </div>

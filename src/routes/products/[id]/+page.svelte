@@ -71,14 +71,8 @@
 			change={12000}
 			formatAsCurrency
 		/>
-		<!-- Total Profit -->
-		<Stat
-			title="Total Profit"
-			num={42000}
-			goodOrBad={GoodOrBad.GOOD}
-			change={12000}
-			formatAsCurrency
-		/>
+		<!-- Average Rating -->
+		<Stat title="Average Rating (out of 5)" num={4.5} goodOrBad={GoodOrBad.GOOD} change={0.5} />
 		<!-- Total Profit -->
 		<Stat
 			title="Total Profit"

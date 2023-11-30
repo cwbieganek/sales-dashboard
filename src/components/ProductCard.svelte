@@ -4,7 +4,7 @@
 	export let product: Product;
 </script>
 
-<a href={`/${product.id}`}>
+<a href={`/products/${product.id}`}>
 	<div class="max-w-sm rounded overflow-hidden bg-gray-900 border border-gray-800">
 		<img class="w-full" src={product.thumbnail} alt={product.description} />
 		<div class="px-6 py-4">

@@ -28,7 +28,7 @@
 		<div class="text-2xl mx-2">/</div>
 		<div>PRODUCTS</div>
 		<div class="text-2xl mx-2">/</div>
-		<span>COFFEE MAKER</span>
+		<span>{product.name.toUpperCase()}</span>
 	</div>
 	<!-- Charts container -->
 	<div class="flex flex-row gap-6">

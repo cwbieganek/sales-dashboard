@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Product } from '@/components/Product.js';
 	import ProductSalesChart from '@/components/ProductSalesChart.svelte';
 	import { GoodOrBad } from '@/components/stat.js';
 	import Stat from '@/components/Stat.svelte';
@@ -11,6 +12,51 @@
 	const profitByMonth2023 = product.salesByMonth['2023'].map((sales) => {
 		return sales * profitPerSale;
 	});
+	const profitStatsFor2023 = calculateProfitStatsForYear(2023, product);
+
+	function calculateSalesStatsForYear(
+		year: number,
+		product: Product
+	): { num: number; change: number; goodOrBad: GoodOrBad } {
+		const previousYear = year - 1; // WARNING: We may not have stats for the previous year!
+		const totalSalesPreviousYear = product.salesByMonth[previousYear].reduce(
+			(previousValue, currentValue) => {
+				return previousValue + currentValue;
+			}
+		);
+		const totalSalesThisYear = product.salesByMonth[year].reduce((previousValue, currentValue) => {
+			return previousValue + currentValue;
+		});
+		const change = totalSalesThisYear - totalSalesPreviousYear;
+
+		return {
+			num: totalSalesThisYear,
+			change: change,
+			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
+		};
+	}
+
+	function calculateProfitStatsForYear(
+		year: number,
+		product: Product
+	): { num: number; change: number; goodOrBad: GoodOrBad } {
+		const previousYear = year - 1; // WARNING: We may not have stats for the previous year!
+		const profitPreviousYear = product.salesByMonth[previousYear].reduce(
+			(previousValue, currentValue) => {
+				return previousValue + currentValue * profitPerSale;
+			}
+		);
+		const profitThisYear = product.salesByMonth[year].reduce((previousValue, currentValue) => {
+			return previousValue + currentValue * profitPerSale;
+		});
+		const change = profitThisYear - profitPreviousYear;
+
+		return {
+			num: profitThisYear,
+			change: change,
+			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
+		};
+	}
 </script>
 
 <div class="h-full px-28 pb-6">
@@ -56,9 +102,9 @@
 			<!-- Total Profit -->
 			<Stat
 				title="Total Profit"
-				num={totalProfit}
-				goodOrBad={GoodOrBad.GOOD}
-				change={12000}
+				num={profitStatsFor2023.num}
+				goodOrBad={profitStatsFor2023.goodOrBad}
+				change={profitStatsFor2023.change}
 				formatAsCurrency
 			/>
 			<!-- Sales -->

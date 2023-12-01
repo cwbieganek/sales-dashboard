@@ -14,5 +14,8 @@ export interface Product {
 	sales: number;
 	category: ProductCategory;
 	thumbnail: string;
-	salesByMonth: number[];
+	salesByMonth: {
+		2022: number[];
+		2023: number[];
+	};
 }

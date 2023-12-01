@@ -8,7 +8,7 @@
 
 	const profitPerSale = product.listPrice - product.wholesaleCost;
 	const totalProfit = profitPerSale * product.sales;
-	const profitByMonth = product.salesByMonth.map((sales) => {
+	const profitByMonth2023 = product.salesByMonth['2023'].map((sales) => {
 		return sales * profitPerSale;
 	});
 </script>
@@ -37,14 +37,14 @@
 			class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80 p-2"
 		>
 			<h3 class="text-white font-semibold mb-2">Sales by Month</h3>
-			<ProductSalesChart salesByMonth={product.salesByMonth} label="Sales by Month" />
+			<ProductSalesChart salesByMonth={product.salesByMonth['2023']} label="Sales by Month" />
 		</div>
 		<!-- Chart 2 -->
 		<div
 			class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80 p-2"
 		>
 			<h3 class="text-white font-semibold mb-2">Profit by Month</h3>
-			<ProductSalesChart salesByMonth={profitByMonth} label="Profit by Month" />
+			<ProductSalesChart salesByMonth={profitByMonth2023} label="Profit by Month" />
 		</div>
 	</div>
 	<!-- Stats container -->

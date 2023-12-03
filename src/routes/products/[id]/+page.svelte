@@ -19,6 +19,8 @@
 	const viewsFor2023 = product.views[2023];
 	const returnsFor2022 = product.returns[2022];
 	const returnsFor2023 = product.returns[2023];
+	const uniqueCustomersFor2022 = product.uniqueCustomers[2022];
+	const uniqueCustomersFor2023 = product.uniqueCustomers[2023];
 
 	function calculateSalesStatsForYear(
 		year: number,
@@ -166,7 +168,14 @@
 				change={ratingsStatsFor2023.change}
 			/>
 			<!-- Unique Customers -->
-			<Stat title="Unique Customers" num={2400} goodOrBad={GoodOrBad.GOOD} change={400} />
+			<Stat
+				title="Unique Customers"
+				num={uniqueCustomersFor2023}
+				goodOrBad={uniqueCustomersFor2023 - uniqueCustomersFor2022 >= 0
+					? GoodOrBad.GOOD
+					: GoodOrBad.BAD}
+				change={uniqueCustomersFor2023 - uniqueCustomersFor2022}
+			/>
 		</div>
 	</div>
 </div>

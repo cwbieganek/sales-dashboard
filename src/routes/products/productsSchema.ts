@@ -9,10 +9,11 @@ export const productsSchema = z.array(
 		listPrice: z.number(),
 		wholesaleCost: z.number(),
 		sales: z.number(),
-		category: z.nativeEnum(ProductCategory),
+		salesByMonth: z.record(z.coerce.number(), z.array(z.number())),
+		returns: z.record(z.coerce.number(), z.number()),
 		ratings: z.record(z.coerce.number(), z.array(z.number())),
 		views: z.record(z.coerce.number(), z.number()),
+		category: z.nativeEnum(ProductCategory),
 		thumbnail: z.string(),
-		salesByMonth: z.record(z.coerce.number(), z.array(z.number())),
 	})
 );

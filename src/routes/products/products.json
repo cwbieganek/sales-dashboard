@@ -52,6 +52,10 @@
 				2
 			]
 		},
+		"views": {
+			"2022": 824,
+			"2023": 900
+		},
 		"category": "Kitchen",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -107,6 +111,10 @@
 				5,
 				2
 			]
+		},
+		"views": {
+			"2022": 824,
+			"2023": 900
 		},
 		"category": "Kitchen",
 		"thumbnail": "/img/card-top.jpg"
@@ -164,6 +172,10 @@
 				2
 			]
 		},
+		"views": {
+			"2022": 824,
+			"2023": 900
+		},
 		"category": "Gaming",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -219,6 +231,10 @@
 				5,
 				2
 			]
+		},
+		"views": {
+			"2022": 824,
+			"2023": 900
 		},
 		"category": "Books",
 		"thumbnail": "/img/card-top.jpg"
@@ -276,6 +292,10 @@
 				2
 			]
 		},
+		"views": {
+			"2022": 824,
+			"2023": 900
+		},
 		"category": "Books",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -331,6 +351,10 @@
 				5,
 				2
 			]
+		},
+		"views": {
+			"2022": 824,
+			"2023": 900
 		},
 		"category": "Office",
 		"thumbnail": "/img/card-top.jpg"
@@ -388,6 +412,10 @@
 				2
 			]
 		},
+		"views": {
+			"2022": 824,
+			"2023": 900
+		},
 		"category": "Office",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -443,6 +471,10 @@
 				5,
 				2
 			]
+		},
+		"views": {
+			"2022": 824,
+			"2023": 900
 		},
 		"category": "Office",
 		"thumbnail": "/img/card-top.jpg"

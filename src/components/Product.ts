@@ -14,6 +14,7 @@ export interface Product {
 	sales: number;
 	category: ProductCategory;
 	ratings: Record<number, number[]>;
+	views: Record<number, number>;
 	thumbnail: string;
 	salesByMonth: Record<number, number[]>;
 }

@@ -12,7 +12,11 @@ export interface Product {
 	listPrice: number;
 	wholesaleCost: number;
 	sales: number;
+	salesByMonth: Record<number, number[]>;
+	returns: Record<number, number>;
+	ratings: Record<number, number[]>;
+	views: Record<number, number>;
+	uniqueCustomers: Record<number, number>;
 	category: ProductCategory;
 	thumbnail: string;
-	salesByMonth: number[];
 }

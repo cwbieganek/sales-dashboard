@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { Product } from '@/components/Product.js';
 	import ProductSalesChart from '@/components/ProductSalesChart.svelte';
 	import { GoodOrBad } from '@/components/stat.js';
 	import Stat from '@/components/Stat.svelte';
@@ -8,9 +9,86 @@
 
 	const profitPerSale = product.listPrice - product.wholesaleCost;
 	const totalProfit = profitPerSale * product.sales;
-	const profitByMonth = product.salesByMonth.map((sales) => {
+	const profitByMonth2023 = product.salesByMonth['2023'].map((sales) => {
 		return sales * profitPerSale;
 	});
+	const profitStatsFor2023 = calculateProfitStatsForYear(2023, product);
+	const salesStatsFor2023 = calculateSalesStatsForYear(2023, product);
+	const ratingsStatsFor2023 = calculateRatingsStatsForYear(2023, product);
+	const viewsFor2022 = product.views[2022];
+	const viewsFor2023 = product.views[2023];
+	const returnsFor2022 = product.returns[2022];
+	const returnsFor2023 = product.returns[2023];
+	const uniqueCustomersFor2022 = product.uniqueCustomers[2022];
+	const uniqueCustomersFor2023 = product.uniqueCustomers[2023];
+
+	function calculateSalesStatsForYear(
+		year: number,
+		product: Product
+	): { num: number; change: number; goodOrBad: GoodOrBad } {
+		const previousYear = year - 1; // WARNING: We may not have stats for the previous year!
+		const totalSalesPreviousYear = product.salesByMonth[previousYear].reduce(
+			(previousValue, currentValue) => {
+				return previousValue + currentValue;
+			}
+		);
+		const totalSalesThisYear = product.salesByMonth[year].reduce((previousValue, currentValue) => {
+			return previousValue + currentValue;
+		});
+		const change = totalSalesThisYear - totalSalesPreviousYear;
+
+		return {
+			num: totalSalesThisYear,
+			change: change,
+			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
+		};
+	}
+
+	function calculateProfitStatsForYear(
+		year: number,
+		product: Product
+	): { num: number; change: number; goodOrBad: GoodOrBad } {
+		const previousYear = year - 1; // WARNING: We may not have stats for the previous year!
+		const profitPreviousYear = product.salesByMonth[previousYear].reduce(
+			(previousValue, currentValue) => {
+				return previousValue + currentValue * profitPerSale;
+			}
+		);
+		const profitThisYear = product.salesByMonth[year].reduce((previousValue, currentValue) => {
+			return previousValue + currentValue * profitPerSale;
+		});
+		const change = profitThisYear - profitPreviousYear;
+
+		return {
+			num: profitThisYear,
+			change: change,
+			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
+		};
+	}
+
+	function calculateRatingsStatsForYear(
+		year: number,
+		product: Product
+	): { num: number; change: number; goodOrBad: GoodOrBad } {
+		const previousYear = year - 1; // WARNING: We may not have stats for the previous year!
+		const averageRatingsPreviousYear = average(product.ratings[previousYear]);
+		const averageRatingsThisYear = average(product.ratings[year]);
+		const change = averageRatingsThisYear - averageRatingsPreviousYear;
+
+		return {
+			num: averageRatingsThisYear,
+			change: change,
+			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
+		};
+	}
+
+	function average(nums: number[]): number {
+		const total = nums.reduce((previousValue, currentValue) => {
+			return previousValue + currentValue;
+		});
+
+		return total / nums.length;
+	}
 </script>
 
 <div class="h-full px-28 pb-6">
@@ -37,14 +115,14 @@
 			class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80 p-2"
 		>
 			<h3 class="text-white font-semibold mb-2">Sales by Month</h3>
-			<ProductSalesChart salesByMonth={product.salesByMonth} label="Sales by Month" />
+			<ProductSalesChart salesByMonth={product.salesByMonth['2023']} label="Sales by Month" />
 		</div>
 		<!-- Chart 2 -->
 		<div
 			class="bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700 w-6/12 h-80 p-2"
 		>
 			<h3 class="text-white font-semibold mb-2">Profit by Month</h3>
-			<ProductSalesChart salesByMonth={profitByMonth} label="Profit by Month" />
+			<ProductSalesChart salesByMonth={profitByMonth2023} label="Profit by Month" />
 		</div>
 	</div>
 	<!-- Stats container -->
@@ -56,21 +134,48 @@
 			<!-- Total Profit -->
 			<Stat
 				title="Total Profit"
-				num={totalProfit}
-				goodOrBad={GoodOrBad.GOOD}
-				change={12000}
+				num={profitStatsFor2023.num}
+				goodOrBad={profitStatsFor2023.goodOrBad}
+				change={profitStatsFor2023.change}
 				formatAsCurrency
 			/>
 			<!-- Sales -->
-			<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} />
+			<Stat
+				title="Sales"
+				num={salesStatsFor2023.num}
+				goodOrBad={salesStatsFor2023.goodOrBad}
+				change={salesStatsFor2023.change}
+			/>
 			<!-- Returns -->
-			<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
+			<Stat
+				title="Returns"
+				num={returnsFor2023}
+				goodOrBad={returnsFor2023 - returnsFor2022 > 0 ? GoodOrBad.BAD : GoodOrBad.GOOD}
+				change={returnsFor2023 - returnsFor2022}
+			/>
 			<!-- Total Profit -->
-			<Stat title="Product Views" num={56000} goodOrBad={GoodOrBad.GOOD} change={8000} />
+			<Stat
+				title="Product Views"
+				num={viewsFor2023}
+				goodOrBad={viewsFor2023 - viewsFor2022 >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD}
+				change={viewsFor2023 - viewsFor2022}
+			/>
 			<!-- Average Rating -->
-			<Stat title="Average Rating (out of 5)" num={4.5} goodOrBad={GoodOrBad.GOOD} change={0.5} />
+			<Stat
+				title="Average Rating (out of 5)"
+				num={ratingsStatsFor2023.num}
+				goodOrBad={ratingsStatsFor2023.goodOrBad}
+				change={ratingsStatsFor2023.change}
+			/>
 			<!-- Unique Customers -->
-			<Stat title="Unique Customers" num={2400} goodOrBad={GoodOrBad.GOOD} change={400} />
+			<Stat
+				title="Unique Customers"
+				num={uniqueCustomersFor2023}
+				goodOrBad={uniqueCustomersFor2023 - uniqueCustomersFor2022 >= 0
+					? GoodOrBad.GOOD
+					: GoodOrBad.BAD}
+				change={uniqueCustomersFor2023 - uniqueCustomersFor2022}
+			/>
 		</div>
 	</div>
 </div>

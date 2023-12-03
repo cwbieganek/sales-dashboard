@@ -13,6 +13,7 @@
 		return sales * profitPerSale;
 	});
 	const profitStatsFor2023 = calculateProfitStatsForYear(2023, product);
+	const salesStatsFor2023 = calculateSalesStatsForYear(2023, product);
 
 	function calculateSalesStatsForYear(
 		year: number,
@@ -108,7 +109,12 @@
 				formatAsCurrency
 			/>
 			<!-- Sales -->
-			<Stat title="Sales" num={10000} goodOrBad={GoodOrBad.GOOD} change={2587} />
+			<Stat
+				title="Sales"
+				num={salesStatsFor2023.num}
+				goodOrBad={salesStatsFor2023.goodOrBad}
+				change={salesStatsFor2023.change}
+			/>
 			<!-- Returns -->
 			<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
 			<!-- Total Profit -->

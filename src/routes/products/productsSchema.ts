@@ -13,6 +13,7 @@ export const productsSchema = z.array(
 		returns: z.record(z.coerce.number(), z.number()),
 		ratings: z.record(z.coerce.number(), z.array(z.number())),
 		views: z.record(z.coerce.number(), z.number()),
+		uniqueCustomers: z.record(z.coerce.number(), z.number()),
 		category: z.nativeEnum(ProductCategory),
 		thumbnail: z.string(),
 	})

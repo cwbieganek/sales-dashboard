@@ -60,6 +60,10 @@
 			"2022": 824,
 			"2023": 900
 		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
+		},
 		"category": "Kitchen",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -123,6 +127,10 @@
 		"views": {
 			"2022": 824,
 			"2023": 900
+		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
 		},
 		"category": "Kitchen",
 		"thumbnail": "/img/card-top.jpg"
@@ -188,6 +196,10 @@
 			"2022": 824,
 			"2023": 900
 		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
+		},
 		"category": "Gaming",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -251,6 +263,10 @@
 		"views": {
 			"2022": 824,
 			"2023": 900
+		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
 		},
 		"category": "Books",
 		"thumbnail": "/img/card-top.jpg"
@@ -316,6 +332,10 @@
 			"2022": 824,
 			"2023": 900
 		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
+		},
 		"category": "Books",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -379,6 +399,10 @@
 		"views": {
 			"2022": 824,
 			"2023": 900
+		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
 		},
 		"category": "Office",
 		"thumbnail": "/img/card-top.jpg"
@@ -444,6 +468,10 @@
 			"2022": 824,
 			"2023": 900
 		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
+		},
 		"category": "Office",
 		"thumbnail": "/img/card-top.jpg"
 	},
@@ -507,6 +535,10 @@
 		"views": {
 			"2022": 824,
 			"2023": 900
+		},
+		"uniqueCustomers": {
+			"2022": 100,
+			"2023": 110
 		},
 		"category": "Office",
 		"thumbnail": "/img/card-top.jpg"

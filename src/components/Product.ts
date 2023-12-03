@@ -13,6 +13,7 @@ export interface Product {
 	wholesaleCost: number;
 	sales: number;
 	category: ProductCategory;
+	ratings: Record<number, number[]>;
 	thumbnail: string;
 	salesByMonth: Record<number, number[]>;
 }

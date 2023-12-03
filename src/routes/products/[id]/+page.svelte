@@ -14,6 +14,7 @@
 	});
 	const profitStatsFor2023 = calculateProfitStatsForYear(2023, product);
 	const salesStatsFor2023 = calculateSalesStatsForYear(2023, product);
+	const ratingsStatsFor2023 = calculateRatingsStatsForYear(2023, product);
 
 	function calculateSalesStatsForYear(
 		year: number,
@@ -57,6 +58,30 @@
 			change: change,
 			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
 		};
+	}
+
+	function calculateRatingsStatsForYear(
+		year: number,
+		product: Product
+	): { num: number; change: number; goodOrBad: GoodOrBad } {
+		const previousYear = year - 1; // WARNING: We may not have stats for the previous year!
+		const averageRatingsPreviousYear = average(product.ratings[previousYear]);
+		const averageRatingsThisYear = average(product.ratings[year]);
+		const change = averageRatingsThisYear - averageRatingsPreviousYear;
+
+		return {
+			num: averageRatingsThisYear,
+			change: change,
+			goodOrBad: change >= 0 ? GoodOrBad.GOOD : GoodOrBad.BAD,
+		};
+	}
+
+	function average(nums: number[]): number {
+		const total = nums.reduce((previousValue, currentValue) => {
+			return previousValue + currentValue;
+		});
+
+		return total / nums.length;
 	}
 </script>
 
@@ -120,7 +145,12 @@
 			<!-- Total Profit -->
 			<Stat title="Product Views" num={56000} goodOrBad={GoodOrBad.GOOD} change={8000} />
 			<!-- Average Rating -->
-			<Stat title="Average Rating (out of 5)" num={4.5} goodOrBad={GoodOrBad.GOOD} change={0.5} />
+			<Stat
+				title="Average Rating (out of 5)"
+				num={ratingsStatsFor2023.num}
+				goodOrBad={ratingsStatsFor2023.goodOrBad}
+				change={ratingsStatsFor2023.change}
+			/>
 			<!-- Unique Customers -->
 			<Stat title="Unique Customers" num={2400} goodOrBad={GoodOrBad.GOOD} change={400} />
 		</div>

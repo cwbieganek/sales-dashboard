@@ -17,6 +17,8 @@
 	const ratingsStatsFor2023 = calculateRatingsStatsForYear(2023, product);
 	const viewsFor2022 = product.views[2022];
 	const viewsFor2023 = product.views[2023];
+	const returnsFor2022 = product.returns[2022];
+	const returnsFor2023 = product.returns[2023];
 
 	function calculateSalesStatsForYear(
 		year: number,
@@ -143,7 +145,12 @@
 				change={salesStatsFor2023.change}
 			/>
 			<!-- Returns -->
-			<Stat title="Returns" num={367} goodOrBad={GoodOrBad.BAD} change={50} />
+			<Stat
+				title="Returns"
+				num={returnsFor2023}
+				goodOrBad={returnsFor2023 - returnsFor2022 > 0 ? GoodOrBad.BAD : GoodOrBad.GOOD}
+				change={returnsFor2023 - returnsFor2022}
+			/>
 			<!-- Total Profit -->
 			<Stat
 				title="Product Views"

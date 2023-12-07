@@ -127,8 +127,16 @@
 	</div>
 	<!-- Stats container -->
 	<div class="w-full h-80 mt-6 bg-gray-900 border rounded-md border-gray-800 hover:border-gray-700">
-		<div class="text-white text-center">
-			<span class="text-3xl">Stats </span><span>(last year)</span>
+		<div class="text-white text-center flex items-center justify-center gap-2 mt-2">
+			<span class="text-3xl">Stats</span>
+			<select
+				id="stats-year"
+				name="stats-year"
+				class="block rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-black sm:text-sm sm:leading-6"
+			>
+				<option value="2022">2022</option>
+				<option value="2023" selected>2023</option>
+			</select>
 		</div>
 		<div class="grid grid-cols-3 grid-rows-2 p-2">
 			<!-- Total Profit -->
